@@ -37,7 +37,8 @@ namespace BetterDecorator
         }
 
         /// <summary>
-        /// Implements the directions described on main
+        /// Decorates the string with "n" times the char before and after the
+        /// string
         /// </summary>
         /// <param name="s">The string that gets decorated</param>
         /// <param name="dec">The decoration char</param>
