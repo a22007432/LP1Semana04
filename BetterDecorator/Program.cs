@@ -15,25 +15,31 @@ namespace BetterDecorator
         /// n times that said char will repeat itself</param>
         static void Main(string[] args)
         {
-            
-            string phrase = args[0];
-            char mdec = '0';
-            int mn = 1;
-
-            for(int i = 0; i < 3; i++)
+            if(args.Length == 0)
             {
-                if(i == 1)
-                {
-                    mdec = char.Parse(args[i]);
-                }
-                if(i == 2)
-                {
-                    mn = int.Parse(args[i]);
-                }
+                Console.WriteLine(Decor());
             }
+            else
+            {
+                string phrase = args[0];
+                char mdec = '0';
+                int mn = 0;
 
-         
-            Console.WriteLine(Decor(phrase, mdec ,mn));
+                for(int i = 0; i < 3; i++)
+                {
+                    if(i == 1)
+                    {
+                        mdec = char.Parse(args[i]);
+                    }
+                    if(i == 2)
+                    {
+                        mn = int.Parse(args[i]);
+                    }
+                }
+
+            
+                Console.WriteLine(Decor(phrase, mdec ,mn));
+            }
         }
 
         /// <summary>
@@ -65,5 +71,13 @@ namespace BetterDecorator
 
             return ret;
         }
+
+        private static string Decor()
+        {
+            string ret = "";
+            ret += Decor("User did not specify args!", '=', 3);
+            return ret;
+        }
+
     }
 }
